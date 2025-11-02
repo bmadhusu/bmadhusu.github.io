@@ -6,6 +6,7 @@ categories: media
 
 Today I was playing with the hugging face API when I was following the gradio course on deep learning.ai ; in that course they use the python request API to make calls out to hugging face's inference API;
 
+
 For these courses, rather than using the notebook and hitting shift enter on each cell, I'm actually copying and pasting the code onto my local machine and running from here because I'm hoping the knowledge will stick more. It's  been proving fruitful because I feel like I'm actually owning the code more. And often times it's not even that smooth a transition. I have to make modifications, which is forcing me to think and learn.
 
  so a few things:
