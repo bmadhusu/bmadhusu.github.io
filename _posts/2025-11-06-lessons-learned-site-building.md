@@ -12,13 +12,13 @@ I used Cursor for this development and made more use of GitHub than I ever have 
 ## Privacy with Email
 
 
-I wanted to set up an email to receive feedback but did not want to use my personal email. So the AI suggested a few options, including proton mail, and SimpleLogin. I've heard of proton mail and a number of friends use it, but I never bothered. However, upon the AI suggesting it as a possible solution, I decided to enroll.
+I wanted to set up an email to receive feedback but did not want to use my personal email. So the AI suggested a few options, including ProtonMail, and SimpleLogin. I had heard of ProtonMail and a number of friends use it, but I never bothered. However, upon the AI suggesting it as a possible solution, I decided to enroll.
 
 The other suggestion that was made was to obfuscate the email so that bots/scrapers wouldn't pick it up and start spamming me. I went with a "click-to-reveal" solution that was implemented in Javascript since scrapers don't do anything with Javascript.
 
 ## To save or not to save
 
-My first inclination and how I implemented the app because I was so concerned with privacy was to not save anything and instead keep everything in the URL; this meant that I would make use of fragments: you know, the stuff that follows the # sign. Fragments are purely client side; if I were to hand you the URL, and you clicked it, the browser would load the page but never send the fragment to the server. The fragment. would be used to populate the elements in the page once it's been loaded so the server never sees what's in the fragment. 
+My first inclination and how I implemented the app because I was so concerned with privacy was to not save anything and instead keep everything in the URL; this meant that I would make use of fragments: you know, the stuff that follows the # sign. Fragments are purely client side; if I were to hand you the URL, and you clicked it, the browser would load the page but never send the fragment to the server. The fragment would only be used to populate the elements in the page once it's been loaded so the server never sees what's in the fragment. 
 
 This all sounded pretty secure to me, but what wound up happening was the fragments would get gigantic based on how much information you put into the text boxes on the form. This then became untenable when sharing because text messages and WhatsApp messages would cut the fragment off from the URL. So sharing would be broken. This was a non-starter.
 

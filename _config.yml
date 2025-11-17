@@ -34,3 +34,4 @@ comments:
 
 plugins:
  - jekyll-feed
+ - jemoji
