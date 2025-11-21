@@ -53,7 +53,7 @@ Python's event loop is managing these coroutines and whenever there's an await c
 This seems like a classic case of cooperative multitasking!
 
 
-## Example
+## Mental Model
 
 The async for loops used in my streaming blogpost threw me for a loop (ha) and my mental model for understanding them was not grasping it. Like it's a for loop. Just loop! Why is there an async there and why do you need it?
 
@@ -75,3 +75,43 @@ So in the Google ADK example:
 the async for is needed because the loop is dependent on an asynchronous operation itself. The `run_async()` method is an async generator that's making network calls to get each event - it's literally awaiting the next chunk of streaming data from the API before yielding it. You can't use a regular for loop because each iteration requires an async operation (waiting for network data).
 
 I've been informed that if you forget the async and use a vanilla for loop, the interpreter will complain that the object is not iterable, meaning your for loop is not iterating over the right thing. So should be easily correctable. You'll get something like: `TypeError: 'async_generator' object is not iterable` - which is Python's way of saying "this needs async for, not for!"
+
+## Example
+
+I got this example as part of my interaction:
+
+```python
+async def async_range(count):
+    for i in range(count):
+        await asyncio.sleep(0.5)
+        yield i
+
+async def iterate_example():
+    async for number in async_range(5):
+        print(number)
+```
+
+I entered this code into the interpreter but nothing happened. Then I realized: "oh, these are def-ed". I need to actually call the function. So I invoked `iterate_example()` but I got back: `<coroutine object iterate_example at 0x101113240>`
+
+So now I'm scratching my head... how do I run this?
+Of course AI tells me:
+
+>Ah yes! You need to actually run the coroutine. When you just call iterate_example(), it creates a coroutine object but doesn't execute it.
+You need to use asyncio.run() as in `asyncio.run(iterate_example())`
+
+along with a further explanation:
+
+### Why this happens
+async def functions don't run immediately when called - they return a coroutine object that needs to be executed by an event loop. You have three main ways to run them:
+
+asyncio.run() - Use this at the top level (starts a new event loop)
+
+await - Use this inside another async function
+Manually with event loops (More advanced usage)
+
+So the pattern is:
+
+Top-level: asyncio.run(my_async_function())
+Inside async functions: await my_async_function()
+
+That's why you saw the coroutine object instead of the output - Python was showing you the unevaluated coroutine!
