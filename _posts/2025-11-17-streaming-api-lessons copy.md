@@ -6,6 +6,7 @@ categories: coding
 
 I was trying out various tutorials to learn AI, specifically Google's ADK and a course on Gradio at [Deeplearning.ai](deeplearning.ai); both courses featured code in notebooks that sourced from APIs and both seemed like they did streaming. But I wanted a deeper understanding of how this mechanism worked. Cuz I'm old and I've been out of the coding game for quite some time so have little to no experience with streaming. :smile:
 
+
 Here is the ADK code snippet:
 
 ```python
