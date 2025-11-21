@@ -4,6 +4,17 @@ permalink: "/about/"
 layout: page
 ---
 
+## About Me
+
+IT Program/Project Manager who's been in the industry since the late 90s; Now learning to be technical again because (1) it's where my heart is and (2) AI tools have opened up so many opportunities to learn and experiment.
+
+
+More to come ...
+
+
+Leaving the below because I forget stuff and it's useful if I ever need to recall anything!
+
+
 ## Github Pages
 
 Just fork this [repository](https://github.com/niklasbuschmann/contrast) to `your_username.github.io` and adjust the `_config.yml` to use with [Github Pages](https://pages.github.com/) and your page is done.

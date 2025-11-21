@@ -7,6 +7,7 @@ categories: coding
 This whole exploration into Python async driven by LLM coding has been really interesting.
 I wanted to understand this better as I couldn't really grok it. My mental model is still treating an *async for loop* as just a regular for loop but there are differences!
 
+
 ## Async routines are coroutines
 These functions with async in front are known as coroutines. I know that the term 'coroutines' is used in Go but never really looked into it. So I suppose Python has adopted them. (I know I can look up the story behind all this in an chatbot but just spitballing this for now)
 
