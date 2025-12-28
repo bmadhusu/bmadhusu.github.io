@@ -1,3 +1,5 @@
+@use "utils"
+
 .nowrap
   flex-wrap: nowrap
 
@@ -10,7 +12,7 @@
   margin: .1em 0 .7em
 
 .hover nav:has(svg) a:hover
-  color: gray(100)
+  color: utils.gray(100)
   box-shadow: none
 
 .button a, .dark a
@@ -22,16 +24,16 @@
   color: #fff
   padding: .25em 1em
   &:hover
-    background: light(25)
-    text-decoration-color: gray(0)
+    background: utils.light(25)
+    text-decoration-color: utils.gray(0)
 
 .dark a
-  background: light-dark(gray(22), gray(0))
+  background: light-dark(utils.gray(22), utils.gray(0))
   margin: 0
   padding: .4em .8em
   &:hover
-    background: light(100)
-    color: light(0)
+    background: utils.light(100)
+    color: utils.light(0)
     box-shadow: none
 
 .katex-display

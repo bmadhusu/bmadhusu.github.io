@@ -1,14 +1,16 @@
+@use "utils"
+
 body
-  font: 16px / #{$line-height} $font-family
-  font-size: $font-size
-  background: light(100, 16)
-  color: light(6, 100)
+  font: 16px / #{utils.$line-height} utils.$font-family
+  font-size: utils.$font-size
+  background: utils.light(100, 16)
+  color: utils.light(6, 100)
 
 p
   text-align: justify
 
 a
-  color: $link
+  color: utils.$link
   transition: .25s
   box-shadow: 0 2px transparent
   text-decoration-color: transparent
@@ -22,13 +24,13 @@ a
     box-shadow: 0 2px
 
 hr
-  border: 1px solid gray(100)
+  border: 1px solid utils.gray(100)
   margin: 2em 0
 
 blockquote
-  background: gray(10)
+  background: utils.gray(10)
   color: light-dark(#555, #eee)
-  border-left: 3px solid gray(60)
+  border-left: 3px solid utils.gray(60)
   padding: 1px 1.5em
 
 blockquote, figure
@@ -51,15 +53,15 @@ table
 
 th, td
   padding: .5em 1em
-  border: 1px solid gray(24)
+  border: 1px solid utils.gray(24)
 
 thead, tr:hover
-  background: gray(12)
+  background: utils.gray(12)
 
 pre
   font-size: .8em
-  background: light(22)
-  color: light(100)
+  background: utils.light(22)
+  color: utils.light(100)
   border-radius: 5px
   margin: 1.5em 0
   padding: .8em 1.2em
@@ -67,11 +69,11 @@ pre
 
 code:not(pre code)
   font-size: .9em
-  background: gray(22)
+  background: utils.gray(22)
   border-radius: 3px
   margin: 0 .1em
   padding: .2em .4em
   opacity: .75
 
 header time, nav time
-  color: gray(100)
+  color: utils.gray(100)
