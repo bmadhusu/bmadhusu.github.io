@@ -13,6 +13,10 @@
 
 {{ content }}
 
+{%- if page.layout == "post" or page.layout == "page" or page.url == "/" or page.url == "" -%}
+{% include mermaid.html %}
+{%- endif -%}
+
 {%- if site.footer -%}
 <footer class="hover">
   <div>{{ site.description }}</div>
